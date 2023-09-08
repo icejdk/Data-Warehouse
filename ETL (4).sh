@@ -9,7 +9,7 @@ current_time=$(date +"%Y-%m-%dT%H:%M:%S")
 cutoff_time=$(date -d "$current_time - 4 hours" +"%Y-%m-%dT%H:%M:%S")
 
 # Connect to the MySQL database
-mysql --host=127.0.0.1 --port=3306 --user=root --password='MjE3MDQtam9zYXBo' -e "USE sales;
+mysql --host=127.0.0.1 --port=3306 --user=root --password='password' -e "USE sales;
 SELECT * INTO OUTFILE '/home/project/sales.csv' 
 FIELDS TERMINATED BY ','
 FROM sales_data WHERE timestamp > '$cutoff_time';"
@@ -18,7 +18,7 @@ FROM sales_data WHERE timestamp > '$cutoff_time';"
 
 
 
- export PGPASSWORD=MzEyNzAtam9zYXBo;
+ export PGPASSWORD=password;
 
 
 
